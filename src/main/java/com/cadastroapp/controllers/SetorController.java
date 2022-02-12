@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.cadastroapp.models.Setor;
 import com.cadastroapp.repository.SetorRepository;
@@ -26,5 +27,13 @@ public class SetorController {
 		
 		return "redirect:/cadastrarSetor";
 	}
-
+	
+	@RequestMapping("/setores")
+	public ModelAndView listaSetores(){
+		ModelAndView mv = new ModelAndView("index");
+		Iterable<Setor> setores = sr.findAll();
+		mv.addObject("setores", setores);
+		return mv;
+	}
+	
 }

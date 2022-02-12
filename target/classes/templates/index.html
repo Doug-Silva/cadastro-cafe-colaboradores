@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 	<head>
 	
@@ -7,9 +8,19 @@
 	<title>CadastroCaféApp</title>
 	
 	</head>
-
-    <body>
-        <h1>Cadastrar café da manhã dos colaboradores:</h1>
-    </body>
-
+	
+	<body>
+		<h1>Lista de Colaboradores</h1>
+		<h3><a href="/cadastrarSetor">Cadastrar Setor</a></h3>
+		
+		<div th:each="setor : ${setores}">
+			<div class="row">
+				<p><span th:text="${setor.nomeSetor}"></span></p>
+				<p><span th:text="${setor.nomeSupervisor}"></span></p>
+				<p><span th:text="${setor.dataCadastro}"></span></p>
+				<p><span th:text="${setor.horaCadastro}"></span></p>
+			</div>
+		
+		</div>
+	</body>
 </html>
