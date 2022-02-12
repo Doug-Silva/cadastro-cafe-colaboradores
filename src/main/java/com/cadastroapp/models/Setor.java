@@ -7,9 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class CadastroSetor implements Serializable{
+public class Setor implements Serializable{
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 2L;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
