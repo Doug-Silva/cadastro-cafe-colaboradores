@@ -1,26 +1,48 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org"
-	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 	<head>
-	
-	<meta charset="UTF-8">
-	<title>CadastroCaféApp</title>
-	
+		<meta charset="UTF-8">
+		<title>Cadastro: Café da Manhã</title>
+		
+		<!--GOOGLE FONT-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+				
+		<!--IMPORT DO MATERIALIZE-->
+		<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection"/>
+		
+		<!--OTIMIZAR PARA MOBILE-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>	
 	</head>
 	
 	<body>
-		<h1>Lista de Colaboradores</h1>
-		<h3><a href="/cadastrarSetor">Cadastrar Setor</a></h3>
+		<h1>Lista de Cadastro: Café da Manhã</h1>
+		<h6>Cadastre seu setor e sua refeição:</h6>
 		
-		<div th:each="setor : ${setores}">
-			<div class="row">
-				<p><span th:text="${setor.nomeSetor}"></span></p>
-				<p><span th:text="${setor.nomeSupervisor}"></span></p>
-				<p><span th:text="${setor.dataCadastro}"></span></p>
-				<p><span th:text="${setor.horaCadastro}"></span></p>
-			</div>
-		
-		</div>
+		<h3><a href="/cadastrarSetor" class="waves-effect waves-light btn"><i class="material-icons right">add_circle</i>Cadastrar Setor</a></h3>
+	
+		<table>
+			<thead>
+				<tr>
+					<th>Nome do Setor</th>
+					<th>Supervisor</th>
+					<th>Data do Cadastro</th>
+					<th>Horario do Cadastro</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each="setor : ${setores}">
+					<td><span th:text="${setor.nomeSetor}"></span></td>
+					<td><span th:text="${setor.nomeSupervisor}"></span></td>
+					<td><span th:text="${setor.dataCadastro}"></span></td>
+					<td><span th:text="${setor.horaCadastro}"></span></td>
+				</tr>
+			</tbody>	
+		</table>
+	
+		<!--SCRIPT PARA CARREGAMENTO-->
+		<script type="text/javascript" src="materialize/js/materialize.min.js"></script>	
 	</body>
 </html>
