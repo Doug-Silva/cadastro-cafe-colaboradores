@@ -4,7 +4,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>Cadastro: Café da Manhã</title>
+		<title>Café da Manhã: Grupo WL</title>
 		
 		<!--GOOGLE FONT-->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
@@ -17,12 +17,14 @@
 	</head>
 	
 	<body>
-		<h1>Lista de Cadastro: Café da Manhã</h1>
-		<h6>Cadastre seu setor e sua refeição:</h6>
+		<h1>Café da Manhã - Grupo WL</h1>
+		<h4>Lista de Cadastros:</h4>
+		<p>Cadastre o setor onde trabalha e sua refeição:<br>
+		Após cadastrar o setor, clique no nome do seu setor de trabalho, para inserir seus dados e sua opção de refeição</p>
 		
-		<h3><a href="/cadastrarSetor" class="waves-effect waves-light btn"><i class="material-icons right">add_circle</i>Cadastrar Setor</a></h3>
+		<h3><a href="/cadastrar-setor" class="waves-effect waves-light btn"><i class="material-icons right">library_add</i>Cadastrar Setor</a></h3>
 	
-		<table>
+		<table class="container">
 			<thead>
 				<tr>
 					<th>Nome do Setor</th>
@@ -34,7 +36,7 @@
 			
 			<tbody>
 				<tr th:each="setor : ${setores}">
-					<td><span th:text="${setor.nomeSetor}"></span></td>
+					<td><a th:href="${(#mvc.url('SC#detalhesSetor').arg(0, setor.codigo)).build()}"><span th:text="${setor.nomeSetor}"></span></a></td>
 					<td><span th:text="${setor.nomeSupervisor}"></span></td>
 					<td><span th:text="${setor.dataCadastro}"></span></td>
 					<td><span th:text="${setor.horaCadastro}"></span></td>
@@ -43,6 +45,7 @@
 		</table>
 	
 		<!--SCRIPT PARA CARREGAMENTO-->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="materialize/js/materialize.min.js"></script>	
 	</body>
 </html>
