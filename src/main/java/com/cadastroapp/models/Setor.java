@@ -1,10 +1,13 @@
 package com.cadastroapp.models;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Setor implements Serializable{
@@ -21,35 +24,57 @@ public class Setor implements Serializable{
 	private String dataCadastro;
 	private String horaCadastro;
 	
+	@OneToMany
+	private List <Colaborador> colaborador;
+
 	public long getCodigo() {
 		return codigo;
 	}
+
 	public void setCodigo(long codigo) {
 		this.codigo = codigo;
 	}
+
 	public String getNomeSetor() {
 		return nomeSetor;
 	}
+
 	public void setNomeSetor(String nomeSetor) {
 		this.nomeSetor = nomeSetor;
 	}
+
 	public String getNomeSupervisor() {
 		return nomeSupervisor;
 	}
+
 	public void setNomeSupervisor(String nomeSupervisor) {
 		this.nomeSupervisor = nomeSupervisor;
 	}
+
 	public String getDataCadastro() {
 		return dataCadastro;
 	}
+
 	public void setDataCadastro(String dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
+
 	public String getHoraCadastro() {
 		return horaCadastro;
 	}
+
 	public void setHoraCadastro(String horaCadastro) {
 		this.horaCadastro = horaCadastro;
 	}
+
+	public List<Colaborador> getColaborador() {
+		return colaborador;
+	}
+
+	public void setColaborador(List<Colaborador> colaborador) {
+		this.colaborador = colaborador;
+	}
+	
+	
 	
 }
