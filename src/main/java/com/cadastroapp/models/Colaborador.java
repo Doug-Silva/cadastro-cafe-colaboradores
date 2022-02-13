@@ -3,13 +3,17 @@ package com.cadastroapp.models;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Colaborador {
 	
 	@Id
+	@NotEmpty
 	private String cpf;
+	@NotEmpty
 	private String nomeColaborador;
+	@NotEmpty
 	private String refeicao;
 	
 	@ManyToOne

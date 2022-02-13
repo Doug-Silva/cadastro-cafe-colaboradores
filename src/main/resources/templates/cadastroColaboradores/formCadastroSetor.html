@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org"
-	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="pt-br" 
+	xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 	<head>
 		<meta charset="UTF-8">
-		<title>Café da Manhã: Grupo WL</title>
+		<title>Café da Manhã - Grupo WL</title>
 		
 		<!--GOOGLE FONT-->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
@@ -21,6 +22,9 @@
 		<h3><a href="/lista-cadastros" class="waves-effect waves-light btn"><i class="material-icons right">receipt</i>Lista de Cadastros</a></h3>
 		
 		<form class="container" method="post">
+		
+			<th:block th:include="mensagemValidacao"></th:block><br>
+		
 					Nome do Setor: <input type="text" value="" name="nomeSetor"/>
 			<div class="row">
 				<div class="input-field col s6">

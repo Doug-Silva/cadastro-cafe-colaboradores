@@ -1,35 +1,62 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="pt-br" 
+	xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 	<head>
 		<meta charset="UTF-8">
-		<title>Café da Manhã: Grupo WL</title>
+		<title>Café da Manhã - Grupo WL</title>
 		
 		<!--GOOGLE FONT-->
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-				
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet" />
+		
 		<!--IMPORT DO MATERIALIZE-->
-		<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection"/>
+		<link type="text/css" rel="stylesheet"
+			href="materialize/css/materialize.min.css" media="screen,projection" />
 		
 		<!--OTIMIZAR PARA MOBILE-->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	</head>
 	
 	<body>
 		<h4>Cadastro do Café da Manhã:</h4>
+		
 		<h3><a href="/lista-cadastros" class="waves-effect waves-light btn"><i class="material-icons right">receipt</i>Lista de Cadastros</a></h3>
 		
-		    <form class="container" method="post">
-				Nome do Colaborador: <input type="text" value="" name="nomeColaborador"/>
-				CPF: <input type="text" value="" name="cpf"/>
-				Refeição (Café da Manhã): <input type="text" value="" name="refeicao"/>	
+		<div th:each="setor : ${setor}" class="container">
+
+			<th:block th:include="mensagemValidacao"></th:block><br>
 			
-			<button class="waves-effect waves-light btn" type="submit">Adicionar</button>
-		</form>    
-		
+			<form method="post">
+				Nome do Colaborador: <input type="text" value="" name="nomeColaborador" placeholder="Nome Completo"/> 
+				CPF: <input type="text" value="" name="cpf" placeholder="000.000.000-00"/> 
+				Refeição: <input type="text" value="" name="refeicao" placeholder="Adicione o seu café da manhã"/>
+	
+				<button class="waves-effect waves-light btn" type="submit">Adicionar</button>
+			</form>
+		</div>
+	
+		<h5>Lista de Colaboradores</h5>
+	
+		<div th:each="colaborador : ${colaboradores}" class="container">
+			<div class="row">
+				<div class="input-field col s3">
+					<p><span th:text="${colaborador.nomeColaborador}"></span></p>
+				</div>
+	
+				<div class="input-field col s3">
+					<p><span th:text="${colaborador.cpf}"></span></p>
+				</div>
+	
+				<div class="input-field col s3">
+					<p><span th:text="${colaborador.refeicao}"></span></p>
+				</div>
+			</div>
+		</div>
+	
 		<!--SCRIPT PARA CARREGAMENTO-->
-		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="materialize/js/materialize.min.js"></script>	
+		<script type="text/javascript"src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 	</body>
 </html>

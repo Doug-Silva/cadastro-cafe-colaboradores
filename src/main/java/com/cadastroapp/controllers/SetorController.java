@@ -1,11 +1,15 @@
 package com.cadastroapp.controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.cadastroapp.models.Colaborador;
 import com.cadastroapp.models.Setor;
@@ -22,13 +26,19 @@ public class SetorController {
 	private ColaboradorRepository cr;
 	
 	@RequestMapping(value="/cadastrar-setor", method=RequestMethod.GET)
-	public String form() {
+	public String form(){
 		return "cadastroColaboradores/formCadastroSetor";
 	}
 	
 	@RequestMapping(value="/cadastrar-setor", method=RequestMethod.POST)
-	public String form(Setor setor) {
+	public String form(@Valid Setor setor, BindingResult result, RedirectAttributes attributes){
+		if(result.hasErrors()){
+			attributes.addFlashAttribute("mensagem", "Erro: Verifique se todos os campos foram preenchidos!");
+			return "redirect:/cadastrar-setor";
+		}
+		
 		sr.save(setor);
+		attributes.addFlashAttribute("mensagem", "Setor do colaborador foi adicionado com sucesso!");
 		return "redirect:/cadastrar-setor";
 	}
 	
@@ -45,14 +55,23 @@ public class SetorController {
 		Setor setor = sr.findByCodigo(codigo);
 		ModelAndView mv = new ModelAndView("cadastroColaboradores/formCadastroColaborador");
 		mv.addObject("setor", setor);
+		Iterable<Colaborador> colaboradores = cr.findBySetor(setor);
+		mv.addObject("colaboradores", colaboradores);
 		return mv;
 	}
 	
 	@RequestMapping(value="/{codigo}", method=RequestMethod.POST)
-	public String detalhesSetorPost(@PathVariable("codigo") long codigo, Colaborador colaborador){
+	public String detalhesSetorPost(@PathVariable("codigo") long codigo, 
+	@Valid Colaborador colaborador, BindingResult result, RedirectAttributes attributes){
+		if(result.hasErrors()){
+			attributes.addFlashAttribute("mensagem", "Erro: Verifique se todos os campos foram preenchidos!");
+			return "redirect:/{codigo}";
+		}
+		
 		Setor setor = sr.findByCodigo(codigo);
 		colaborador.setSetor(setor);
 		cr.save(colaborador);
+		attributes.addFlashAttribute("mensagem", "Sua opção de café da manhã foi adicionado com sucesso!");
 		return "redirect:/{codigo}";
 	}
 	
