@@ -1,62 +1,77 @@
 <!DOCTYPE html>
-<html lang="pt-br" 
-	xmlns:th="http://thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
-	<head>
-		<meta charset="UTF-8">
-		<title>Café da Manhã - Grupo WL</title>
-		
-		<!--GOOGLE FONT-->
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-			rel="stylesheet" />
-		
-		<!--IMPORT DO MATERIALIZE-->
-		<link type="text/css" rel="stylesheet"
-			href="materialize/css/materialize.min.css" media="screen,projection" />
-		
-		<!--OTIMIZAR PARA MOBILE-->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	</head>
-	
-	<body>
-		<h4>Cadastro do Café da Manhã:</h4>
-		
-		<h3><a href="/lista-cadastros" class="waves-effect waves-light btn"><i class="material-icons right">receipt</i>Lista de Cadastros</a></h3>
-		
-		<div th:each="setor : ${setor}" class="container">
+    <head>
+        <meta charset="UTF-8">
+        <title>Café da Manhã - Grupo WL</title>
 
-			<th:block th:include="mensagemValidacao"></th:block><br>
-			
-			<form method="post">
-				Nome do Colaborador: <input type="text" value="" name="nomeColaborador" placeholder="Nome Completo"/> 
-				CPF: <input type="text" value="" name="cpf" placeholder="000.000.000-00"/> 
-				Refeição: <input type="text" value="" name="refeicao" placeholder="Adicione o seu café da manhã"/>
+        <!--GOOGLE FONT-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+        <!--IMPORT DO MATERIALIZE-->
+        <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+
+        <!--CSS-->
+        <link type="text/css" rel="stylesheet" href="style/styleCss.css" />
+
+        <!--OTIMIZAR PARA MOBILE-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <div class="nav-wrapper tituloNav"><a href="#" class="brand-logo center">
+                    <i style="font-size: 45px" class="material-icons right">free_breakfast</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    	<li><a href="/lista-cadastros" class="waves-effect waves-light btn botao">
+                    	<i class="material-icons right">receipt</i>Lista de Cadastros</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+        	<section>
+	            <th:block th:include="mensagemValidacao"></th:block><br>
 	
-				<button class="waves-effect waves-light btn" type="submit">Adicionar</button>
-			</form>
-		</div>
+	            <div class="container titulos">Cadastrar Café da Manhã</div>
 	
-		<h5>Lista de Colaboradores</h5>
+	            <fieldset class="container formulario">
+	                <form method="post">
+	                    Nome do Colaborador: <input type="text" value="" name="nomeColaborador" placeholder="Nome Completo"/>
+	                    CPF: <input type="text" value="" name="cpf" placeholder="000.000.000-00"/>
+	                    Refeição: <input type="text" value="" name="refeicao" placeholder="Adicione o seu café da manhã"/>
+	                    <button class="waves-effect waves-light btn botao" type="submit">Adicionar</button>
+	                </form>    
+	            </fieldset>
 	
-		<div th:each="colaborador : ${colaboradores}" class="container">
-			<div class="row">
-				<div class="input-field col s3">
-					<p><span th:text="${colaborador.nomeColaborador}"></span></p>
-				</div>
+	            <div class="container tituloTabela">Lista de Colaboradores</div>
 	
-				<div class="input-field col s3">
-					<p><span th:text="${colaborador.cpf}"></span></p>
-				</div>
+	            <table class="container responsive-table tabela">
+	                <thead>
+	                    <tr>
+	                        <th>Nome do Colaborador</th>
+	                        <th>CPF</th>
+	                        <th>Refeição</th>
+	                    </tr>
+	                </thead>
 	
-				<div class="input-field col s3">
-					<p><span th:text="${colaborador.refeicao}"></span></p>
-				</div>
-			</div>
-		</div>
-	
-		<!--SCRIPT PARA CARREGAMENTO-->
-		<script type="text/javascript"src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
-	</body>
+	                <tbody>
+	                    <tr th:each="colaborador : ${colaboradores}">
+	                        <td><span th:text="${colaborador.nomeColaborador}"></span></td>
+	                        <td><span th:text="${colaborador.cpf}"></span></td>
+	                        <td><span th:text="${colaborador.refeicao}"></span></td>
+	                    </tr>
+	                </tbody>
+	            </table>
+            </section>
+        </main>
+
+        <!--SCRIPT PARA CARREGAMENTO-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
+    </body>
+
 </html>

@@ -1,50 +1,68 @@
 <!DOCTYPE html>
-<html lang="pt-br" 
-	xmlns:th="http://thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
-	<head>
-		<meta charset="UTF-8">
-		<title>Café da Manhã - Grupo WL</title>
-		
-		<!--GOOGLE FONT-->
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-				
-		<!--IMPORT DO MATERIALIZE-->
-		<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection"/>
-		
-		<!--OTIMIZAR PARA MOBILE-->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>	
-	</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Café da Manhã - Grupo WL</title>
+
+        <!--GOOGLE FONT-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+        <!--IMPORT DO MATERIALIZE-->
+        <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+
+        <!--CSS-->
+        <link type="text/css" rel="stylesheet" href="style/styleCss.css" />
+
+        <!--OTIMIZAR PARA MOBILE-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <div class="nav-wrapper tituloNav"><a href="#" class="brand-logo center">
+                    <i style="font-size: 45px" class="material-icons right">group_add</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="/lista-cadastros" class="waves-effect waves-light btn botao">
+                        <i class="material-icons right">receipt</i>Lista de Cadastros</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+	        <section>
+	            <th:block th:include="mensagemValidacao"></th:block><br>
 	
-	<body>
-		<h4>Cadastrar Setor dos Colaboradores:</h4>
-		<h3><a href="/lista-cadastros" class="waves-effect waves-light btn"><i class="material-icons right">receipt</i>Lista de Cadastros</a></h3>
-		
-		<form class="container" method="post">
-		
-			<th:block th:include="mensagemValidacao"></th:block><br>
-		
-					Nome do Setor: <input type="text" value="" name="nomeSetor"/>
-			<div class="row">
-				<div class="input-field col s6">
-					Supervisor: <input type="text" value="" name="nomeSupervisor"/>
-				</div>
-				
-				<div class="input-field col s3">
-					Data do Cadastro: <input type="date" value="" name="dataCadastro"/>
-				</div>
-				
-				<div class="input-field col s3">
-					Horário do Cadastro: <input type="time" value="" name="horaCadastro"/>
-				</div>
-			</div>
-				
-			<button class="waves-effect waves-light btn" type="submit">Salvar</button>
-		</form>
-		
-		<!--SCRIPT PARA CARREGAMENTO-->
-		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
-	</body>
+	            <div class="container titulos">Cadastrar Setor dos Colaboradores</div>
+	
+	            <fieldset class="container formulario">
+	                <form method="post">
+	                            Nome do Setor: <input type="text" value="" name="nomeSetor"/>
+	                    <div class="row">
+	                        <div class="input-field col s6">
+	                            Supervisor: <input type="text" value="" name="nomeSupervisor"/>
+	                        </div>
+	
+	                        <div class="input-field col s3">
+	                            Data do Cadastro: <input type="date" value="" name="dataCadastro"/>
+	                        </div>
+	
+	                        <div class="input-field col s3">
+	                            Horário do Cadastro: <input type="time" value="" name="horaCadastro"/>
+	                        </div>
+	                    </div>
+	                    <button class="waves-effect waves-light btn botao" type="submit">Salvar</button>
+	                </form>  
+	            </fieldset>
+	        </section>   
+        </main>
+
+        <!--SCRIPT PARA CARREGAMENTO-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
+    </body>
+
 </html>
