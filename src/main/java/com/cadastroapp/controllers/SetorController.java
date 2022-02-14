@@ -36,10 +36,16 @@ public class SetorController {
 			attributes.addFlashAttribute("mensagem", "Erro: Verifique se todos os campos foram preenchidos!");
 			return "redirect:/cadastrar-setor";
 		}
-		
 		sr.save(setor);
 		attributes.addFlashAttribute("mensagem", "Setor do colaborador foi adicionado com sucesso!");
 		return "redirect:/cadastrar-setor";
+	}
+	
+	@RequestMapping("/deletarSetor")
+	public String deletarSetor(long codigo) {
+		Setor setor = sr.findByCodigo(codigo);
+		sr.delete(setor);
+		return "redirect:/lista-cadastros";
 	}
 	
 	@RequestMapping("/lista-cadastros")
@@ -67,12 +73,21 @@ public class SetorController {
 			attributes.addFlashAttribute("mensagem", "Erro: Verifique se todos os campos foram preenchidos!");
 			return "redirect:/{codigo}";
 		}
-		
 		Setor setor = sr.findByCodigo(codigo);
 		colaborador.setSetor(setor);
 		cr.save(colaborador);
 		attributes.addFlashAttribute("mensagem", "Sua opção de café da manhã foi adicionado com sucesso!");
 		return "redirect:/{codigo}";
+	}
+	
+	@RequestMapping("/deletarColaborador")
+	public String deletarColaborador(String cpf) {
+		Colaborador colaborador = cr.findByCpf(cpf);
+		cr.delete(colaborador);
+		Setor setor = colaborador.getSetor();
+		long codigoLong = setor.getCodigo();
+		String codigo = "" + codigoLong;
+		return "redirect:/" + codigo;
 	}
 	
 }

@@ -9,6 +9,10 @@ body {
     background: #f3f2ef;
 }
 
+fieldset{
+	border: none;
+}
+
 .titulos {
 	font-size: 20px;
     text-align: center;

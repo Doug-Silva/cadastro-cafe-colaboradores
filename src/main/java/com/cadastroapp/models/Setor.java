@@ -2,6 +2,8 @@ package com.cadastroapp.models;
 
 import java.io.Serializable;
 import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,7 +29,7 @@ public class Setor implements Serializable{
 	@NotEmpty
 	private String horaCadastro;
 	
-	@OneToMany
+	@OneToMany( mappedBy="setor", cascade=CascadeType.ALL, orphanRemoval=true)
 	private List <Colaborador> colaborador;
 
 	public long getCodigo() {

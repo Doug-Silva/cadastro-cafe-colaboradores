@@ -19,7 +19,6 @@
     </head>
 
     <body>
-
         <header>
             <nav>
                 <div class="nav-wrapper tituloNav"><a href="#" class="brand-logo center">Unidac - Grupo WL</a>
@@ -47,6 +46,7 @@
 	                        <th>Supervisor</th>
 	                        <th>Data do Cadastro</th>
 	                        <th>Horário do Cadastro</th>
+	                        <th>Deletar</th>
 	                    </tr>
 	                </thead>
 	
@@ -57,6 +57,8 @@
 	                        <td><span th:text="${setor.nomeSupervisor}"></span></td>
 	                        <td><span th:text="${setor.dataCadastro}"></span></td>
 	                        <td><span th:text="${setor.horaCadastro}"></span></td>
+	                        <td><a th:href="${(#mvc.url('SC#deletarSetor').arg(0, setor.codigo)).build()}">
+	                        <i class="material-icons">delete_forever</i></a></td>
 	                    </tr>
 	                </tbody>
 	            </table>

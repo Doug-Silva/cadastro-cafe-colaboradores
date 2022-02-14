@@ -7,5 +7,6 @@ import com.cadastroapp.models.Setor;
 
 public interface ColaboradorRepository extends CrudRepository<Colaborador, String>{
 	Iterable<Colaborador> findBySetor(Setor setor);
+	Colaborador findByCpf(String cpf);
 
 }
