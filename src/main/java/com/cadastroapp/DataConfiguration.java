@@ -11,14 +11,14 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 @Configuration
 public class DataConfiguration {
 	
-	//CONEXÃO HEROKU
+	//CONEXÃO LOCALHOST
 	@Bean
-	public DataSource dataSource(){
+		public DataSource dataSource(){
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://pfw0ltdr46khxib3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/itn4ip5h3k2ax127");
-		dataSource.setUsername("qjsy5wkoyo6gox0q");
-		dataSource.setPassword("y1pck6uqynquz5iz");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/cadastroapp");
+		dataSource.setUsername("root");
+		dataSource.setPassword("douglas442");
 		return dataSource;
 	}
 	
