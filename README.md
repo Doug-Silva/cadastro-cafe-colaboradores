@@ -7,7 +7,7 @@
 
   <h1>Café da Manhã - Grupo WL</h1>
   <p>Foi desenvolvido uma aplicação java Web, com o framework Spring Boot,
-  para cadastrar os colaboradores da empresa pelo setor e adicionar as opções de café da manhã de cada um</p>
+  para cadastrar os colaboradores da empresa pelo setor e adicionar suas opções de café da manhã</p>
 
   <div>
     <a href="https://github.com/Doug-Silva/cadastroapp/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/react" alt="License MIT"></a>
