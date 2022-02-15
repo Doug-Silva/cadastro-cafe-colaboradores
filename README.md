@@ -23,14 +23,14 @@
 
   Link da aplicação no Heroku: https://appcadastro-cafe.herokuapp.com
 
-  ## 🔨 Instruções
+  ## 🔨 Anotações
   
-  Desafio Unidac - Grupo WL: Clique [AQUI](Desafio Unidac - Grupo WL.md) para abrir.
+  - [Desafio Unidac - Grupo WL](./others/Desafio-Unidac.md)
 
   ## 📒 Anotações
-
-  Anotações do desenvolvimento: Clique [AQUI](Anotações.md) para abrir.
-
+  
+  - [Anotações do desenvolvimento](./others/Anotações.md)
+  
   ## ⚙️ Tecnologias
 
   As seguintes ferramentas foram utilizadas na construção do projeto:
