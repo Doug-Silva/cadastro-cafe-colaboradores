@@ -23,7 +23,7 @@
 
   - Link da aplicação no Heroku: https://appcadastro-cafe.herokuapp.com
 
-  ## 🔨 Anotações
+  ## 🔨 Desafio
   
   - [Desafio Unidac - Grupo WL](./others/Desafio-Unidac.md)
 
