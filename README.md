@@ -25,11 +25,11 @@
 
   ## 🔨 Instruções
   
-  Desafio Unidac - Grupo WL: Clique [AQUI] (Desafio Unidac - Grupo WL.md) para abrir.
+  Desafio Unidac - Grupo WL: Clique [AQUI](Desafio Unidac - Grupo WL.md) para abrir.
 
   ## 📒 Anotações
 
-  Anotações do desenvolvimento: Clique [AQUI] (Anotações.md) para abrir.
+  Anotações do desenvolvimento: Clique [AQUI](Anotações.md) para abrir.
 
   ## ⚙️ Tecnologias
 
