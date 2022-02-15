@@ -79,7 +79,5 @@ public class Setor implements Serializable{
 	public void setColaborador(List<Colaborador> colaborador) {
 		this.colaborador = colaborador;
 	}
-	
-	
-	
+
 }
