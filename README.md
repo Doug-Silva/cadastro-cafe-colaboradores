@@ -21,7 +21,7 @@
 
   ## 🚀 Iniciar
 
-  Link da aplicação no Heroku: https://appcadastro-cafe.herokuapp.com
+  - Link da aplicação no Heroku: https://appcadastro-cafe.herokuapp.com
 
   ## 🔨 Anotações
   
