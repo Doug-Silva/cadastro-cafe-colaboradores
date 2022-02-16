@@ -8,12 +8,6 @@ body {
 	background: #f3f2ef;
 }
 
-.botao {
-	border-radius: 20px;
-	background: linear-gradient(45deg, #361949, #2bbbad);
-	font-size: 14px;
-}
-
 .titulos {
 	font-size: 20px;
 	text-align: center;
@@ -30,17 +24,41 @@ body {
 	box-shadow: 5px 2px 8px #361949;
 }
 
-.descricao {
+.tituloprinc {
+	position: relative;
+	text-align: center;
 	font-size: 20px;
 	box-shadow: 5px 5px 8px #361949;
-	margin-top: 55px;
-	margin-bottom: 80px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	background: linear-gradient(45deg, #c24242, #361949, #2bbbad);
+	color: #fff;
+	border-radius: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.descricao {
+	position: relative;
+	font-size: 20px;
+	box-shadow: 5px 5px 8px #361949;
+	margin-top: 20px;
+	margin-bottom: 50px;
 	background: linear-gradient(45deg, #361949, #2bbbad);
 	color: #fff;
 	border-radius: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
 	padding-top: 15px;
-	padding-left: 90px;
 	padding-bottom: 15px;
+}
+
+.descricao p {
+	margin-top: 8px;
+	margin-bottom: 12px;
+	margin-left: 35px;
 }
 
 fieldset {
@@ -57,6 +75,12 @@ fieldset {
 	margin-bottom: 50px;
 	background: #fff;
 	border-radius: 10px;
+	margin-bottom: 50px;
+}
+
+.formSetor {
+	position: relative;
+	margin-top: 12px;
 }
 
 .tituloTabela {
@@ -77,4 +101,10 @@ fieldset {
 	margin-bottom: 12px;
 	background: #fff;
 	border-radius: 10px;
+}
+
+.botao {
+	border-radius: 20px;
+	background: linear-gradient(45deg, #361949, #2bbbad);
+	font-size: 12px;
 }

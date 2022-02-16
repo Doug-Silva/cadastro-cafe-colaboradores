@@ -3,22 +3,22 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>Café da Manhã - Grupo WL</title>
+        <title>App Cadastra Café</title>
 
         <!--GOOGLE FONT-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
         <!--IMPORT DO MATERIALIZE-->
-        <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
 
         <!--CSS-->
-        <link type="text/css" rel="stylesheet" href="style/styleCss.css"/>
+        <link type="text/css" rel="stylesheet" href="style/styleCss.css" />
 
         <!--OTIMIZAR PARA MOBILE-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <!-- ICONE DA PAGINA -->
-        <link rel="shortcut icon" type="imagem/x-icon" href="img/favicon.ico"/>
+        <link rel="shortcut icon" type="imagem/x-icon" href="img/favicon.ico" />
     </head>
 
     <body>
@@ -27,50 +27,52 @@
                 <div class="nav-wrapper corNav"><a href="#" class="brand-logo center">
                     <i style="font-size: 40px" class="material-icons">free_breakfast</i></a>
                     <ul id="nav-mobile" class="right">
-                    	<li><a href="/lista-cadastros" class="waves-effect waves-light btn botao">Menu Inicial</a></li>
+                    <li><a href="/lista-cadastros" class="waves-effect waves-light btn botao">Menu Inicial</a></li>
                     </ul>
                 </div>
             </nav>
         </header>
 
         <main>
-        	<section class="container">
-	            <th:block th:include="mensagemValidacao"></th:block><br>
-	
-	            <div class="container titulos">Cadastrar Café da Manhã</div>
-	
-	            <fieldset class="container formulario">
-	                <form method="post">
-	                    Nome do Colaborador: <input type="text" value="" name="nomeColaborador" placeholder="Nome Completo"/>
-	                    CPF: <input type="text" value="" name="cpf" placeholder="000.000.000-00"/>
-	                    Refeição: <input type="text" value="" name="refeicao" placeholder="Adicione o seu café da manhã"/>
-	                    
-	                    <button class="waves-effect waves-light btn botao" type="submit">Adicionar</button>
-	                </form>    
-	            </fieldset>
-	
-	            <div class="container tituloTabela">Lista de Colaboradores</div>
-	
-	            <table class="container responsive-table tabela">
-	                <thead>
-	                    <tr>
-	                        <th>Nome do Colaborador</th>
-	                        <th>CPF</th>
-	                        <th>Refeição</th>
-	                        <th>Deletar</th>
-	                    </tr>
-	                </thead>
-	
-	                <tbody>
-	                    <tr th:each="colaborador : ${colaboradores}">
-	                        <td><span th:text="${colaborador.nomeColaborador}"></span></td>
-	                        <td><span th:text="${colaborador.cpf}"></span></td>
-	                        <td><span th:text="${colaborador.refeicao}"></span></td>
-	                        <td><a th:href="${(#mvc.url('SC#deletarColaborador').arg(0, colaborador.cpf)).build()}">
-	                        <i class="material-icons">delete_forever</i></a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
+            <section class="container">
+            
+                <th:block th:include="mensagemValidacao"></th:block><br>
+
+                <div class="container titulos">Cadastrar Café da Manhã</div>
+
+                <fieldset class="container formulario">
+                    <form method="post">
+                        Nome do Colaborador: <input type="text" value="" name="nomeColaborador" placeholder="Nome Completo" />
+                        CPF: <input type="text" value="" name="cpf" placeholder="000.000.000-00" />
+                        Refeição: <input type="text" value="" name="refeicao" placeholder="Adicione o seu café da manhã" />
+
+                        <button class="waves-effect waves-light btn botao" type="submit">Adicionar</button>
+                    </form>
+                </fieldset>
+
+                <div class="container tituloTabela">Lista de Colaboradores</div>
+
+                <table class="container responsive-table tabela">
+                    <thead>
+                        <tr>
+                            <th>Nome do Colaborador</th>
+                            <th>CPF</th>
+                            <th>Refeição</th>
+                            <th>Deletar</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr th:each="colaborador : ${colaboradores}">
+                            <td><span th:text="${colaborador.nomeColaborador}"></span></td>
+                            <td><span th:text="${colaborador.cpf}"></span></td>
+                            <td><span th:text="${colaborador.refeicao}"></span></td>
+                            <td><a th:href="${(#mvc.url('SC#deletarColaborador').arg(0, colaborador.cpf)).build()}">
+                            <i class="material-icons">delete_forever</i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
             </section>
         </main>
 
