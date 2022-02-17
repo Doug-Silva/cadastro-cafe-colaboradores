@@ -1,82 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
-    <head>
-        <meta charset="UTF-8">
-        <title>App Cadastra Café</title>
+	<head>
+		<meta charset="UTF-8">
+		<title>App Cadastra Café</title>
+		
+		<!--GOOGLE FONT-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+		
+		<!--IMPORT DO MATERIALIZE-->
+		<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+		
+		<!--CSS-->
+		<link type="text/css" rel="stylesheet" href="style/styleCss.css" />
+		
+		<!--OTIMIZAR PARA MOBILE-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<!-- ICONE DA PAGINA -->
+		<link rel="shortcut icon" type="imagem/x-icon" href="img/favicon.ico" />
+	</head>
 
-        <!--GOOGLE FONT-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-
-        <!--IMPORT DO MATERIALIZE-->
-        <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection"/>
-
-        <!--CSS-->
-        <link type="text/css" rel="stylesheet" href="style/styleCss.css"/>
-
-        <!--OTIMIZAR PARA MOBILE-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        
-        <!-- ICONE DA PAGINA -->
-        <link rel="shortcut icon" type="imagem/x-icon" href="img/favicon.ico"/>
-    </head>
-
-    <body class="teste">
-        <header>
-            <nav>
-                <div class="nav-wrapper corNav"><a href="#" class="brand-logo center">
-                    <i style="font-size: 40px" class="material-icons left">receipt</i></a>
-                    <ul id="nav-mobile" class="right">
-                        <li><a href="/cadastrar-setor" class="waves-effect waves-light btn botao">Cadastrar Setor</a></li> 
-                    </ul>
-                </div>
-            </nav>
-        </header>
-
-        <main>
-	        <section class="container">
-	        
-	        	<div class="container tituloprinc">
+	<body>
+		<header>
+			<nav>
+				<div class="nav-wrapper corNavBar">
+					<a href="#" class="brand-logo center"> <i style="font-size: 40px" class="material-icons left">receipt</i></a>
+					<ul id="nav-mobile" class="right">
+						<li><a href="/cadastrar-setor" class="waves-effect waves-light btn botao">Cadastrar Setor</a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+	
+		<main>
+			<section class="container">
+			
+				<div class="container tituloPrincipal">
 					<p>Café da Manhã - Grupo WL</p>
-	            </div>
-	        
-	            <div class="container descricao">
+				</div>
+	
+				<div class="container descricaoCadastro">
 					<p>1. Cadastre o setor onde você trabalha.</p>
 					<p>2. Clique no seu setor de trabalho, para adicionar seus dados e sua opção de refeição.</p>
-	            </div>
+				</div>
 	
-	            <div class="container titulos">Lista de cadastros</div>
+				<div class="container subTitulos">Lista de Cadastros</div>
 	
-	            <table class="container responsive-table formulario">
-	                <thead>
-	                    <tr>
-	                        <th>Nome do Setor</th>
-	                        <th>Supervisor</th>
-	                        <th>Data do Cadastro</th>
-	                        <th>Horário do Cadastro</th>
-	                        <th>Deletar</th>
-	                    </tr>
-	                </thead>
+				<table class="container responsive-table listaCadastrosIndex">
+					<thead>
+						<tr>
+							<th>Nome do Setor</th>
+							<th>Supervisor</th>
+							<th>Data do Cadastro</th>
+							<th>Horário do Cadastro</th>
+							<th>Deletar</th>
+						</tr>
+					</thead>
 	
-	                <tbody>
-	                    <tr th:each="setor : ${setores}">
-	                        <td><a th:href="${(#mvc.url('SC#detalhesSetor').arg(0, setor.codigo)).build()}">
-	                        <span th:text="${setor.nomeSetor}"></span></a></td>
-	                        <td><span th:text="${setor.nomeSupervisor}"></span></td>
-	                        <td><span th:text="${setor.dataCadastro}"></span></td>
-	                        <td><span th:text="${setor.horaCadastro}"></span></td>
-	                        <td><a th:href="${(#mvc.url('SC#deletarSetor').arg(0, setor.codigo)).build()}">
-	                        <i class="material-icons">delete_forever</i></a></td>
-	                    </tr>
-	                </tbody>
-	            </table>
-	        </section>  
-        </main>
-
-        <!--SCRIPT PARA CARREGAMENTO-->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
-
-    </body>
-
+					<tbody>
+						<tr th:each="setor : ${setores}">
+							<td><a th:href="${(#mvc.url('SC#detalhesSetor').arg(0, setor.codigo)).build()}">
+							<span th:text="${setor.nomeSetor}"></span></a></td>
+							<td><span th:text="${setor.nomeSupervisor}"></span></td>
+							<td><span th:text="${setor.dataCadastro}"></span></td>
+							<td><span th:text="${setor.horaCadastro}"></span></td>
+							<td><a th:href="${(#mvc.url('SC#deletarSetor').arg(0, setor.codigo)).build()}"> 
+							<i class="material-icons">delete_forever</i></a></td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</main>
+	
+		<!--SCRIPT PARA CARREGAMENTO-->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+		
+	</body>
 </html>

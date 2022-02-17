@@ -33,7 +33,7 @@ public class SetorController {
 	@RequestMapping(value="/cadastrar-setor", method=RequestMethod.POST)
 	public String form(@Valid Setor setor, BindingResult result, RedirectAttributes attributes){
 		if(result.hasErrors()){
-			attributes.addFlashAttribute("mensagem", "Erro: Verifique se todos os campos foram preenchidos!");
+			attributes.addFlashAttribute("mensagem", "Erro: Verifique se os campos foram preenchidos!");
 			return "redirect:/cadastrar-setor";
 		}
 		sr.save(setor);
@@ -70,13 +70,13 @@ public class SetorController {
 	public String detalhesSetorPost(@PathVariable("codigo") long codigo, 
 	@Valid Colaborador colaborador, BindingResult result, RedirectAttributes attributes){
 		if(result.hasErrors()){
-			attributes.addFlashAttribute("mensagem", "Erro: Verifique se todos os campos foram preenchidos!");
+			attributes.addFlashAttribute("mensagem", "Erro: Verifique se os campos foram preenchidos!");
 			return "redirect:/{codigo}";
 		}
 		Setor setor = sr.findByCodigo(codigo);
 		colaborador.setSetor(setor);
 		cr.save(colaborador);
-		attributes.addFlashAttribute("mensagem", "Sua opção de café da manhã foi adicionado com sucesso!");
+		attributes.addFlashAttribute("mensagem", "Opção de café da manhã foi adicionado com sucesso!");
 		return "redirect:/{codigo}";
 	}
 	

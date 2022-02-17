@@ -5,32 +5,22 @@
 }
 
 body {
-	background: #f3f2ef;
+	background: #edebf2;
 }
 
-.titulos {
-	font-size: 20px;
-	text-align: center;
-	box-shadow: 5px 5px 8px #361949;
-	margin-top: 25px;
-	margin-bottom: 25px;
+.botao {
+	border-radius: 20px;
 	background: linear-gradient(45deg, #361949, #2bbbad);
-	color: #fff;
-	border-radius: 10px;
+	font-size: 12px;
 }
 
-.corNav {
-	background: #c24242;
-	box-shadow: 5px 2px 8px #361949;
-}
-
-.tituloprinc {
+.tituloPrincipal {
 	position: relative;
 	text-align: center;
 	font-size: 20px;
 	box-shadow: 5px 5px 8px #361949;
-	margin-top: 20px;
-	margin-bottom: 10px;
+	margin-top: 45px;
+	margin-bottom: 50px;
 	background: linear-gradient(45deg, #c24242, #361949, #2bbbad);
 	color: #fff;
 	border-radius: 10px;
@@ -40,7 +30,23 @@ body {
 	padding-bottom: 15px;
 }
 
-.descricao {
+.subTitulos {
+	font-size: 20px;
+	text-align: center;
+	box-shadow: 5px 5px 8px #361949;
+	margin-top: 45px;
+	margin-bottom: 25px;
+	background: linear-gradient(45deg, #361949, #2bbbad);
+	color: #fff;
+	border-radius: 10px;
+}
+
+.corNavBar {
+	background: #c24242;
+	box-shadow: 5px 2px 8px #361949;
+}
+
+.descricaoCadastro {
 	position: relative;
 	font-size: 20px;
 	box-shadow: 5px 5px 8px #361949;
@@ -55,17 +61,24 @@ body {
 	padding-bottom: 15px;
 }
 
-.descricao p {
+.descricaoCadastro p {
 	margin-top: 8px;
 	margin-bottom: 12px;
 	margin-left: 35px;
+}
+
+.mensagemAlerta {
+	text-align: center;
+	font-size: 20px;
+	margin-top: 10px;
+/* 	margin-bottom: 12px; */
 }
 
 fieldset {
 	border: none;
 }
 
-.formulario {
+.formularios {
 	align-items: center;
 	box-shadow: 0px 0px 8px #361949;
 	padding-top: 15px;
@@ -75,15 +88,9 @@ fieldset {
 	margin-bottom: 50px;
 	background: #fff;
 	border-radius: 10px;
-	margin-bottom: 50px;
 }
 
-.formSetor {
-	position: relative;
-	margin-top: 12px;
-}
-
-.tituloTabela {
+.tituloListaColaboradores {
 	width: 60%;
 	font-size: 20px;
 	text-align: center;
@@ -95,16 +102,17 @@ fieldset {
 	border-radius: 10px;
 }
 
-.tabela {
-	width: 60%;
+.listaCadastrosIndex {
 	box-shadow: 0px 0px 8px #361949;
-	margin-bottom: 12px;
 	background: #fff;
 	border-radius: 10px;
+	margin-bottom: 50px;	
 }
 
-.botao {
-	border-radius: 20px;
-	background: linear-gradient(45deg, #361949, #2bbbad);
-	font-size: 12px;
+.listaColaboradores {
+	width: 60%;
+	box-shadow: 0px 0px 8px #361949;
+	background: #fff;
+	border-radius: 10px;
+	margin-bottom: 50px;
 }

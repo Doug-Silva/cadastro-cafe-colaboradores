@@ -24,7 +24,7 @@
     <body>
         <header>
             <nav>
-                <div class="nav-wrapper corNav"><a href="#" class="brand-logo center">
+                <div class="nav-wrapper corNavBar"><a href="#" class="brand-logo center">
                     <i style="font-size: 40px" class="material-icons">free_breakfast</i></a>
                     <ul id="nav-mobile" class="right">
                     <li><a href="/lista-cadastros" class="waves-effect waves-light btn botao">Menu Inicial</a></li>
@@ -36,23 +36,23 @@
         <main>
             <section class="container">
             
-                <th:block th:include="mensagemValidacao"></th:block><br>
+                <div class="mensagemAlerta"><th:block th:include="mensagemValidacao"></th:block></div>
 
-                <div class="container titulos">Cadastrar Café da Manhã</div>
+                <div class="container subTitulos">Cadastrar Café da Manhã</div>
 
-                <fieldset class="container formulario">
+                <fieldset class="container formularios">
                     <form method="post">
                         Nome do Colaborador: <input type="text" value="" name="nomeColaborador" placeholder="Nome Completo" />
                         CPF: <input type="text" value="" name="cpf" placeholder="000.000.000-00" />
-                        Refeição: <input type="text" value="" name="refeicao" placeholder="Adicione o seu café da manhã" />
+                        Refeição: <input type="text" value="" name="refeicao" placeholder="Adicione Seu Café da Manhã" />
 
                         <button class="waves-effect waves-light btn botao" type="submit">Adicionar</button>
                     </form>
                 </fieldset>
 
-                <div class="container tituloTabela">Lista de Colaboradores</div>
+                <div class="container tituloListaColaboradores">Lista de Colaboradores</div>
 
-                <table class="container responsive-table tabela">
+                <table class="container responsive-table listaColaboradores">
                     <thead>
                         <tr>
                             <th>Nome do Colaborador</th>
