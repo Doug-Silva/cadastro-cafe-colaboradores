@@ -1,4 +1,4 @@
-package com.cadastroapp;
+package com.cadastroapp.data;
 
 import javax.sql.DataSource;
 import org.springframework.context.annotation.Bean;
@@ -12,17 +12,16 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 @Configuration
 @Profile("dev")
 public class DataConfiguration {
-	
-	//CONEXÃO LOCALHOST
+
 	@Bean
-	public DataSource dataSource(){
-		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/cadastroapp");
-		dataSource.setUsername("root");
-		dataSource.setPassword("douglas442");
-		return dataSource;
-	}
+    public DataSource dataSource(){
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/cadastroapp");
+        dataSource.setUsername("root");
+        dataSource.setPassword("douglas442");
+        return dataSource;
+    }
 	
 	@Bean
 	public JpaVendorAdapter jpaVendorAdapter(){
