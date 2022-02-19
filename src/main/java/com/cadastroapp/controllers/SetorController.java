@@ -25,6 +25,8 @@ public class SetorController {
 	@Autowired
 	private ColaboradorRepository cr;
 	
+	//CADASTRAR O SETOR DOS COLABORADORES
+	
 	@RequestMapping(value="/cadastrar-setor", method=RequestMethod.GET)
 	public String form(){
 		return "cadastroColaboradores/formCadastroSetor";
@@ -33,13 +35,19 @@ public class SetorController {
 	@RequestMapping(value="/cadastrar-setor", method=RequestMethod.POST)
 	public String form(@Valid Setor setor, BindingResult result, RedirectAttributes attributes){
 		if(result.hasErrors()){
-			attributes.addFlashAttribute("mensagem", "Erro: Verifique se os campos foram preenchidos!");
-			return "redirect:/cadastrar-setor";
+			
+		//MENSAGEM DE ALERTA: SE OS CAMPOS DO FORMULÁRIO NÃO ESTIVEREM PREENCHIDOS	
+		attributes.addFlashAttribute("mensagem", "Erro: Verifique se os campos foram preenchidos!");
+		return "redirect:/cadastrar-setor";
 		}
 		sr.save(setor);
+		
+		//MENSAGEM DE ALERTA: SETOR ADICIONADO
 		attributes.addFlashAttribute("mensagem", "Setor do colaborador foi adicionado com sucesso!");
 		return "redirect:/cadastrar-setor";
 	}
+	
+	//DELETAR O SETOR DOS COLABORADORES
 	
 	@RequestMapping("/deletarSetor")
 	public String deletarSetor(long codigo) {
@@ -48,6 +56,8 @@ public class SetorController {
 		return "redirect:/lista-cadastros";
 	}
 	
+	//MOSTRA A LISTA DE CADASTROS
+	
 	@RequestMapping("/lista-cadastros")
 	public ModelAndView listaSetores(){
 		ModelAndView mv = new ModelAndView("index");
@@ -55,6 +65,8 @@ public class SetorController {
 		mv.addObject("setores", setores);
 		return mv;
 	}
+	
+	//CADASTRAR OS COLABORADORES E SUAS OPÇÕES DE CAFÉ DA MANHÃ
 	
 	@RequestMapping(value="/{codigo}", method=RequestMethod.GET)
 	public ModelAndView detalhesSetor(@PathVariable("codigo") long codigo){
@@ -70,15 +82,21 @@ public class SetorController {
 	public String detalhesSetorPost(@PathVariable("codigo") long codigo, 
 	@Valid Colaborador colaborador, BindingResult result, RedirectAttributes attributes){
 		if(result.hasErrors()){
-			attributes.addFlashAttribute("mensagem", "Erro: Verifique se os campos foram preenchidos!");
-			return "redirect:/{codigo}";
+			
+		//MENSAGEM DE ALERTA: SE OS CAMPOS DO FORMULÁRIO NÃO ESTIVEREM PREENCHIDOS	
+		attributes.addFlashAttribute("mensagem", "Erro: Verifique se os campos foram preenchidos!");
+		return "redirect:/{codigo}";
 		}
 		Setor setor = sr.findByCodigo(codigo);
 		colaborador.setSetor(setor);
 		cr.save(colaborador);
+		
+		//MENSAGEM DE ALERTA: COLABORADOR E CAFÁ DA MANHÃ ADICIONADO
 		attributes.addFlashAttribute("mensagem", "Opção de café da manhã foi adicionado com sucesso!");
 		return "redirect:/{codigo}";
 	}
+	
+	//DELETA OS COLABORADORES E SUAS OPÇÕES DE CAFÉ DA MANHÃ
 	
 	@RequestMapping("/deletarColaborador")
 	public String deletarColaborador(String cpf) {
