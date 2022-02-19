@@ -40,6 +40,6 @@
   - [Materialize](https://materializecss.com/getting-started.html)
   - [MySQL](https://dev.mysql.com/downloads/workbench/)
   - [Deployment Heroku](https://www.heroku.com/)
-
-  <br><br>
+  
+  <br>
   <a href='#voltar-topo'>⬆ Voltar ao topo</a>
