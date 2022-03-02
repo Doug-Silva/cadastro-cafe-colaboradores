@@ -22,11 +22,7 @@
   ## 🚀 Iniciar
 
   - Link da aplicação no Heroku: https://appcadastro-cafe.herokuapp.com
-
-  ## 🔨 Desafio
-  
-  - [Desafio Unidac - Grupo WL](./others/Desafio-Unidac.md)
-
+ 
   ## 📒 Anotações
   
   - [Anotações do desenvolvimento](./others/Anotações.md)
