@@ -5,7 +5,7 @@
     <a href='#voltar-topo'><img src="./others/logo-projeto.jpg" alt="Logotipo do projeto" height="140" width="260"></a>
   </div><br>
 
-  <h1>Café da Manhã - Grupo WL</h1>
+  <h1>Coffee Time</h1>
   <p>Foi desenvolvido uma aplicação java web, com o framework Spring Boot,
   para cadastrar os colaboradores da empresa pelo setor e adicionar suas opções de café da manhã</p>
 
