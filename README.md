@@ -6,7 +6,7 @@
   </div><br>
 
   <h1>Coffee Time</h1>
-  <p>Foi desenvolvido uma aplicação java web, com o framework Spring Boot,
+  <p>Foi desenvolvido uma aplicação Java web, com o framework Spring Boot,
   para cadastrar os colaboradores da empresa pelo setor e adicionar suas opções de café da manhã</p>
 
   <div>
