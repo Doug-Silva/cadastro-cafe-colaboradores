@@ -3,8 +3,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>App Cadastra Café</title>
-
+        
         <!--GOOGLE FONT-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 
@@ -19,6 +18,8 @@
         
         <!-- ICONE DA PAGINA -->
         <link rel="shortcut icon" type="imagem/x-icon" href="img/favicon.ico"/>
+        
+        <title>Coffee Time</title>
     </head>
 
     <body>
@@ -42,16 +43,25 @@
 		
 		            <fieldset class="container formularios">
 		                <form method="post">
-		                         Nome do Setor: <input type="text" value="" name="nomeSetor" placeholder="Seu Setor de Trabalho"/>
-		                         Supervisor: <input type="text" value="" name="nomeSupervisor" placeholder="Nome Completo do Supervisor"/>
-		                            
+                            <div>
+                                <label for="nomeSetor">Nome do Setor:</label>
+                                <input type="text" name="nomeSetor" value="" id="nomeSetor" placeholder="Seu Setor de Trabalho" required>
+                            </div>
+
+                            <div>
+                                <label for="nomeSupervisor">Supervisor:</label>
+                                <input type="text" name="nomeSupervisor" value="" id="nomeSupervisor" placeholder="Nome Completo do Supervisor" required>
+                            </div>
+
 		                    <div class="row">
 		                        <div class="input-field col s6">
-		                            Data do Cadastro: <input type="date" value="" name="dataCadastro"/>
+                                    <label for="dataCadastro">Data do Cadastro:</label>
+                                    <input type="date" name="dataCadastro" value="" id="dataCadastro" placeholder="" required>
 		                        </div>
 		
 		                        <div class="input-field col s6">
-		                            Horário do Cadastro: <input type="time" value="" name="horaCadastro"/>
+                                    <label for="horaCadastro">Horário do Cadastro:</label>
+                                    <input type="time" name="horaCadastro" value="" id="horaCadastro" placeholder="" required>
 		                        </div>
 		                    </div>
 		                    
