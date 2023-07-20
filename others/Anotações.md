@@ -1,11 +1,11 @@
 # Anotações do desenvolvimento
 
-- Foi desenvolvido uma aplicação java web, utilizando o Eclipse IDE Java Web Developers com o framework Spring Boot.
+- Foi desenvolvido uma aplicação java web, utilizando o Eclipse IDE com o framework Spring Boot.
 
-- Foi utilizado o Banco de dados MySQL, com a database cadastroapp, com a tabela de cadastro dos setores de trabalho
-  da empresa e dos colaboradores, com suas opções de café da manhã.
+- Foi utilizado o Banco de dados MySQL, com a tabela de cadastro dos setores de trabalho da empresa e dos colaboradores,
+  com suas opções de café da manhã.
 
-- Primeiro o colaborados se cadastra no seu respectivo setor de trabalho.
+- Primeiro o colaborador se cadastra no seu respectivo setor de trabalho.
 
 - Após o cadastro, o colaborador clica no seu setor para adicionar as suas opções de refeição para o café da manhã.
 
