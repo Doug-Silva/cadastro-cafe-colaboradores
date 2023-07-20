@@ -6,7 +6,8 @@ Sempre há pessoas que querem trazer pão, bolo, suco...
 
 Nesse desafio é necessário que seja montando uma aplicação web (front a sua escolha) com backend em JAVA (REST).
 
-A aplicação deverá ter o nome do colaborador, cpf e o que será trazido para o café da manha. O colaborador poderá trazer mais de um opção para o café da manhã.
+A aplicação deverá ter o nome do colaborador, cpf e o que será trazido para o café da manha. O colaborador poderá
+trazer mais de um opção para o café da manhã.
 
 Ex. Fulano de Tal, CPF: 732.442.160-13 e Suco de Acerola.
 
@@ -20,7 +21,7 @@ Implemente utilizando a linguagem Java com a IDE eclipse ou STS
 
 # Layout
 
-Utilize a criatividade e monte um layout amigavel.
+Utilize a criatividade e monte um layout amigável.
 <br/>
 Livre o Front
 

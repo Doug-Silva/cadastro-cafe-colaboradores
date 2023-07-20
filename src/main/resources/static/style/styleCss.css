@@ -14,7 +14,7 @@ body {
 	font-size: 12px;
 }
 
-.tituloPrincipal h1 {
+.tituloPrincipal {
 	position: relative;
 	text-align: center;
 	font-size: 20px;
@@ -61,34 +61,21 @@ body {
 	padding-bottom: 15px;
 }
 
-.descricaoCadastro ol li {
+.descricaoCadastro p {
 	margin-top: 8px;
 	margin-bottom: 12px;
 	margin-left: 35px;
-}
-
-table a {
-	color: #5a03e5;
-}
-
-table a:hover {
-	color: #9f7fd3;
-	text-decoration: underline;
 }
 
 .mensagemAlerta {
 	text-align: center;
 	font-size: 20px;
 	margin-top: 10px;
+/* 	margin-bottom: 12px; */
 }
 
 fieldset {
 	border: none;
-}
-
-label {
-	font-size: 16px;
-	color: #000;
 }
 
 .formularios {

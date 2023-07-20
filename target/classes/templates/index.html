@@ -3,23 +3,22 @@
 
 	<head>
 		<meta charset="UTF-8">
-		
+		<title>App Cadastra Café</title>
+
 		<!--GOOGLE FONT-->
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-		
+
 		<!--IMPORT DO MATERIALIZE-->
 		<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
-		
+
 		<!--CSS-->
 		<link type="text/css" rel="stylesheet" href="style/styleCss.css" />
-		
+
 		<!--OTIMIZAR PARA MOBILE-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		
-		<!-- ICONE DA PAGINA -->
+
+		<!--ICONE DA PAGINA-->
 		<link rel="shortcut icon" type="imagem/x-icon" href="img/favicon.ico" />
-		
-		<title>Coffee Time</title>
 	</head>
 
 	<body>
@@ -33,28 +32,21 @@
 				</div>
 			</nav>
 		</header>
-	
+
 		<main>
 			<section class="container">
-			
+
 				<div class="container tituloPrincipal">
-					<h1>Coffee Time</h1>
+					<p>Café da Manhã - Grupo WL</p>
 				</div>
-	
+
 				<div class="container descricaoCadastro">
-                    <ol>
-                        <li>
-                            Cadastre o setor onde você trabalha
-                        </li>
-                        
-                        <li>
-                            Clique no seu setor de trabalho, para adicionar seus dados e sua opção de refeição
-                        </li>
-                    </ol>
+					<p>1. Cadastre o setor onde você trabalha.</p>
+					<p>2. Clique no seu setor de trabalho, para adicionar seus dados e sua opção de refeição.</p>
 				</div>
-	
+
 				<div class="container subTitulos">Lista de Cadastros</div>
-	
+
 				<table class="container responsive-table listaCadastrosIndex">
 					<thead>
 						<tr>
@@ -65,7 +57,7 @@
 							<th>Deletar</th>
 						</tr>
 					</thead>
-	
+
 					<tbody>
 						<tr th:each="setor : ${setores}">
 							<td><a th:href="${(#mvc.url('SC#detalhesSetor').arg(0, setor.codigo)).build()}">
@@ -73,17 +65,17 @@
 							<td><span th:text="${setor.nomeSupervisor}"></span></td>
 							<td><span th:text="${setor.dataCadastro}"></span></td>
 							<td><span th:text="${setor.horaCadastro}"></span></td>
-							<td><a th:href="${(#mvc.url('SC#deletarSetor').arg(0, setor.codigo)).build()}"> 
+							<td><a th:href="${(#mvc.url('SC#deletarSetor').arg(0, setor.codigo)).build()}">
 							<i class="material-icons">delete_forever</i></a></td>
 						</tr>
 					</tbody>
 				</table>
 			</section>
 		</main>
-	
+
 		<!--SCRIPT PARA CARREGAMENTO-->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
-		
+
 	</body>
 </html>

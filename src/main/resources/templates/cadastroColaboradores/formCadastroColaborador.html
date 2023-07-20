@@ -3,7 +3,8 @@
 
     <head>
         <meta charset="UTF-8">
-        
+        <title>App Cadastra Café</title>
+
         <!--GOOGLE FONT-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
@@ -16,10 +17,8 @@
         <!--OTIMIZAR PARA MOBILE-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- ICONE DA PAGINA -->
-        <link rel="shortcut icon" type="imagem/x-icon" href="img/favicon.ico" />
-        
-        <title>Coffee Time</title>
+        <!--ICONE DA PAGINA-->
+		<link rel="shortcut icon" type="imagem/x-icon" href="../static/img/favicon.ico" />
     </head>
 
     <body>
@@ -36,28 +35,17 @@
 
         <main>
             <section class="container">
-            
+
                 <div class="mensagemAlerta"><th:block th:include="mensagemValidacao"></th:block></div>
 
                 <div class="container subTitulos">Cadastrar Café da Manhã</div>
 
                 <fieldset class="container formularios">
                     <form method="post">
-                        <div>
-                            <label for="nomeColaborador">Nome do Colaborador:</label>
-                            <input type="text" name="nomeColaborador" value="" id="nomeColaborador" placeholder="Nome Completo" required>
-                        </div>
+                        Nome do Colaborador: <input type="text" value="" name="nomeColaborador" placeholder="Nome Completo" />
+                        CPF: <input type="text" value="" name="cpf" placeholder="000.000.000-00" />
+                        Refeição: <input type="text" value="" name="refeicao" placeholder="Adicione Seu Café da Manhã" />
 
-                        <div>
-                            <label for="cpf">CPF:</label>
-                            <input type="text" name="cpf" value="" id="cpf" placeholder="000.000.000-00" required>
-                        </div>
-
-                        <div>
-                            <label for="refeicao">Refeição:</label>
-                            <input type="text" name="refeicao" value="" id="refeicao" placeholder="Adicione Seu Café da Manhã" required>
-                        </div>
-                        
                         <button class="waves-effect waves-light btn botao" type="submit">Adicionar</button>
                     </form>
                 </fieldset>
@@ -84,7 +72,7 @@
                         </tr>
                     </tbody>
                 </table>
-                
+
             </section>
         </main>
 

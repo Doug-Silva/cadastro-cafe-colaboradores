@@ -2,7 +2,6 @@ package com.cadastroapp.models;
 
 import java.io.Serializable;
 import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,14 +11,14 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
-public class Setor implements Serializable{
-	
+public class Setor implements Serializable {
+
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long codigo;
-	
+
 	@NotEmpty
 	private String nomeSetor;
 	@NotEmpty
@@ -28,9 +27,9 @@ public class Setor implements Serializable{
 	private String dataCadastro;
 	@NotEmpty
 	private String horaCadastro;
-	
-	@OneToMany( mappedBy="setor", cascade=CascadeType.ALL, orphanRemoval=true)
-	private List <Colaborador> colaborador;
+
+	@OneToMany(mappedBy = "setor", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Colaborador> colaborador;
 
 	public long getCodigo() {
 		return codigo;

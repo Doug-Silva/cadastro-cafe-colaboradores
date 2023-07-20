@@ -1,12 +1,13 @@
 <span id='voltar-topo'></span>
-<div align="center">  
+
+<div align="center">
   <!--Adicionar logotipo do projeto aqui-->
   <div>
     <a href='#voltar-topo'><img src="./others/logo-projeto.jpg" alt="Logotipo do projeto" height="140" width="260"></a>
   </div><br>
 
-  <h1>Coffee Time</h1>
-  <p>Foi desenvolvido uma aplicação Java web, com o framework Spring Boot,
+  <h1>Café da Manhã - Grupo WL</h1>
+  <p>Foi desenvolvido uma aplicação java Web, com o framework Spring Boot,
   para cadastrar os colaboradores da empresa pelo setor e adicionar suas opções de café da manhã</p>
 
   <div>
@@ -15,27 +16,27 @@
 
   <!--Adicionar imagem/gif do projeto aqui-->
   <div style="width:30%">
-    <a href='#voltar-topo'><img src="./others/tela-inicio-projeto.gif" style="width:100%" alt="Imagem do projeto"></a>   
+    <a href='#voltar-topo'><img src="./others/tela-inicio-projeto.gif" style="width:100%" alt="Imagem do projeto"></a>
   </div><hr>
   </div>
 
-  ## 🚀 Iniciar
+## 🚀 Iniciar
 
-  - Link da aplicação no Heroku: https://appcadastro-cafe.herokuapp.com
- 
-  ## 📒 Anotações
-  
-  - [Anotações do desenvolvimento](./others/Anotações.md)
-  
-  ## ⚙️ Tecnologias
+- Link da aplicação no Railway:
 
-  As seguintes ferramentas foram utilizadas na construção do projeto:
+## 📒 Anotações
 
-  - [Eclipse IDE for Enterprise Java and Web Developers](https://www.eclipse.org/downloads/)
-  - [Spring Boot](https://start.spring.io/)
-  - [Materialize](https://materializecss.com/getting-started.html)
-  - [MySQL](https://dev.mysql.com/downloads/workbench/)
-  - [Deployment Heroku](https://www.heroku.com/)
-  
-  <br>
-  <a href='#voltar-topo'>⬆ Voltar ao topo</a>
+- [Anotações do desenvolvimento](./others/Anotações.md)
+
+## ⚙️ Tecnologias
+
+As seguintes ferramentas foram utilizadas na construção do projeto:
+
+- [Eclipse IDE](https://eclipseide.org)
+- [Spring Boot](https://start.spring.io)
+- [Materialize](https://materializecss.com/getting-started.html)
+- [MySQL](https://dev.mysql.com/downloads/installer)
+- [Deployment Railway](https://railway.app)
+
+<br><br>
+<a href='#voltar-topo'>⬆ Voltar ao topo</a>
