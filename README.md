@@ -22,7 +22,7 @@
 
 ## 🚀 Iniciar
 
-- Link da aplicação no Railway:
+- Link da aplicação no Railway: https://coffee-time-app.up.railway.app
 
 ## 📒 Anotações
 
