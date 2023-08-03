@@ -11,7 +11,7 @@
   para cadastrar os colaboradores da empresa pelo setor e adicionar suas opções de café da manhã</p>
 
   <div>
-    <a href="https://github.com/Doug-Silva/cadastroapp/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/react" alt="License MIT"></a>
+    <a href="https://github.com/Doug-Silva/coffee-time-app/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/react" alt="License MIT"></a>
   </div><br>
 
   <!--Adicionar imagem/gif do projeto aqui-->
